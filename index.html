@@ -535,23 +535,35 @@
         /* Responsive */
         @media (max-width: 768px) {
             nav {
-                padding: 1.5rem;
+                /* パディングを少し縮小してヘッダー高さを抑える */
+                padding: 1rem 1.5rem;
                 flex-direction: column;
-                gap: 1.5rem;
+                /* ロゴとメニューの間隔を縮小 */
+                gap: 0.8rem;
             }
 
             .logo img {
-                height: 40px; /* モバイルでは少し小さく */
+                height: 40px;
             }
 
             .nav-links {
-                gap: 1.5rem;
-                font-size: 0.9rem;
+                /* メニュー同士の間隔を縮小し、文字サイズも調整 */
+                gap: 0.8rem;
+                font-size: 0.75rem; /* 0.9remから縮小 */
+                width: 100%;
+                justify-content: center; /* 中央寄せ */
+                flex-wrap: nowrap; /* 折り返しを禁止して1行にする */
+            }
+            
+            /* メニュー文字が長くて収まらない場合の予備設定 */
+            .nav-links a {
+                white-space: nowrap;
             }
 
             .hero {
                 min-height: 80vh;
-                padding: 6rem 2rem 4rem;
+                /* FV被り対策：上部パディングを増やしてコンテンツを下げる */
+                padding: 140px 2rem 4rem; 
             }
 
             .hero h1 {
@@ -629,7 +641,7 @@
                 <img src="ark-growth-partners-logo.png" alt="Ark Growth Partners">
             </a>
             <ul class="nav-links">
-                <li><a href="#values">Our Value</a></li>
+                <li><a href="#values">Value</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#leadership">Leadership</a></li>
                 <li><a href="#company">Company</a></li>
